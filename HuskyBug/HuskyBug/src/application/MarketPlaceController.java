@@ -33,8 +33,8 @@ public class MarketPlaceController {
 
     @FXML
     public void initialize() {
-        String userFilePath = System.getProperty("user.dir") + "\\HuskyBug\\src\\application\\users.txt";
-        String productFilePath = System.getProperty("user.dir") + "\\HuskyBug\\src\\application\\products.txt";
+        String userFilePath = System.getProperty("user.dir") + "\\src\\application\\users.txt";
+        String productFilePath = System.getProperty("user.dir") + "\\src\\application\\products.txt";
 
         try {
             dataLoader.loadUsers(userFilePath);
