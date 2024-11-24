@@ -1,2 +1,0 @@
-productID:1 | title:Used iPhone 12 | description:Good condition | price:500 | sellerID:1 | status:available | imagePath:/Users/jazzy/eclipseProjects/FinalProject/src/images/trade.png
-productID:2 | title:MacBook Pro 2019 | description:Some scratches | price:1000 | sellerID:2 | status:sold | imagePath:/Users/jazzy/eclipseProjects/FinalProject/src/images/tradeLogo.jpg
