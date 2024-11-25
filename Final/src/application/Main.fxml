@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Login">
+   <left>
+      <AnchorPane prefHeight="529.0" prefWidth="534.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="6.0" layoutY="1.0" prefHeight="542.0" prefWidth="528.0">
+               <children>
+                  <ImageView fitHeight="645.0" fitWidth="521.0" layoutX="7.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@wechat_2024-11-23_141453_043.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="553.0" prefWidth="365.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="52.0" layoutY="210.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="264.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="183.0" layoutY="212.0" promptText="Username" />
+            <PasswordField fx:id="password" layoutX="183.0" layoutY="266.0" promptText="Password" />
+            <Button fx:id="button" layoutX="183.0" layoutY="364.0" mnemonicParsing="false" onAction="#USERLogIn" prefHeight="26.0" prefWidth="96.0" text="Login" textFill="#e81818">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></Button>
+            <Label fx:id="wrongLogin" layoutX="183.0" layoutY="159.0" prefHeight="29.0" prefWidth="144.0" textFill="#bc1111">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="85.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="111.74324035644531" AnchorPane.topAnchor="24.0">
+               <image>
+                  <Image url="@Untitled.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
