@@ -10,7 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -41,7 +43,6 @@ public class Home {
                 productDetailsLabel.setText("No products available.");
                 productImageView.setImage(null);
             } else {
-
                 productListView.getItems().addAll(allProducts);
                 productListView.getSelectionModel().selectFirst();
                 showProductDetails(allProducts.get(0));
@@ -50,6 +51,8 @@ public class Home {
             productListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
                 if (newSelection != null) {
                     showProductDetails(newSelection);
+                } else {
+                    productImageView.setImage(null);
                 }
             });
 
@@ -57,7 +60,6 @@ public class Home {
             e.printStackTrace();
         }
     }
-    
     
     public void loadProductsByType(String productType) {
         // 清空列表
@@ -102,7 +104,19 @@ public class Home {
             "\nStatus: " + product.getStatus() +
             "\nProductType: " + product.getProductType());
         if (product.getImagePath() != null && !product.getImagePath().isEmpty()) {
-            productImageView.setImage(new Image("file:" + product.getImagePath()));
+            try {
+                String absolutePath = Paths.get(System.getProperty("user.dir"), "src", product.getImagePath()).toString();
+                File imageFile = new File(absolutePath);
+                if (imageFile.exists()) {
+                    productImageView.setImage(new Image(imageFile.toURI().toString()));
+                } else {
+                    productImageView.setImage(null);
+                    System.out.println("Image file not found at: " + absolutePath);
+                }
+            } catch (Exception e) {
+                productImageView.setImage(null);
+                System.out.println("Failed to load image for product: " + product.getTitle() + "\n" + e.getMessage());
+            }
         } else {
             productImageView.setImage(null);
         }
@@ -121,6 +135,5 @@ public class Home {
             }
         });
     }
-
    
 }

@@ -27,7 +27,7 @@ public class Login implements LoginInterface {
 
     private void checkLogin() throws IOException {
         //TO DO
-        if ("aaa".equals(username.getText()) && "aaa".equals(password.getText())) {
+        if ("".equals(username.getText()) && "".equals(password.getText())) {
             wrongLogin.setText("Success");
             SceneManager.getInstance().changeScene("SideNavigate.fxml");
         } else {

@@ -1,3 +1,0 @@
-userID:1 | username:johndoe | password:123456 | email:johndoe@example.com | phone:1234567890
-userID:2 | username:janedoe | password:abcdef | email:janedoe@example.com | phone:0987654321
-

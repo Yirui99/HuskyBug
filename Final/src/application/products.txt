@@ -1,7 +1,0 @@
-productID:1 | title:Used iPhone 12 | description:Good condition | price:500.0 | sellerID:1 | status:available | imagePath:/home/ronaldo/Documents/Courses/CSYE6200/Lab/Final/aaa.jpg | productType:Cellphones
-productID:2 | title:Lightbulk | description:Some scratches | price:1.0 | sellerID:2 | status:sold | imagePath:/home/ronaldo/Documents/Courses/CSYE6200/Lab/Final/aaa.jpg | productType:Groceries
-productID:3 | title:Nike | description:Some scratches | price:10.0 | sellerID:2 | status:sold | imagePath:/home/ronaldo/Documents/Courses/CSYE6200/Lab/Final/aaa.jpg | productType:Clothing
-productID:4 | title:beauty Pro 2019 | description:Some scratches | price:100.0 | sellerID:2 | status:sold | imagePath:/home/ronaldo/Documents/Courses/CSYE6200/Lab/Final/aaa.jpg | productType:Beauty
-productID:5 | title:MacAir 2018 | description:Some scratches | price:1000.0 | sellerID:2 | status:sold | imagePath:/home/ronaldo/Documents/Courses/CSYE6200/Lab/Final/aaa.jpg | productType:Computers
-productID:6 | title:a | description:asdfasdf | price:23.0 | sellerID:2 | status:ok | imagePath:AddItem | productType:Beauty
-productID:7 | title:MacBook Pro 2019 | description:Some scratches | price:10000.0 | sellerID:2 | status:sold | imagePath:/home/ronaldo/Documents/Courses/CSYE6200/Lab/Final/aaa.jpg | productType:Others
