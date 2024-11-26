@@ -1,4 +1,4 @@
-package application;
+ackage application;
 
 public class GroceriesControllerFactory implements ProductControllerFactory {
     @Override

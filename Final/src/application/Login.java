@@ -29,7 +29,7 @@ public class Login implements LoginInterface {
         //TO DO
         if ("".equals(username.getText()) && "".equals(password.getText())) {
             wrongLogin.setText("Success");
-            SceneManager.getInstance().changeScene("SideNavigate.fxml");
+            SceneManager.getInstance().changeScene("Home.fxml");
         } else {
             wrongLogin.setText("Failed");
         }

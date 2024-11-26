@@ -9,6 +9,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +25,7 @@ import java.util.stream.Collectors;
 public class Home {
     private DataLoaderContext dataLoaderContext = new DataLoaderContext();
     private List<Product> allProducts = new ArrayList<>();
+    private List<Product> currentFilteredProducts = new ArrayList<>();
 
     @FXML
     private ListView<Product> productListView;
@@ -38,6 +44,7 @@ public class Home {
         try {
             loadData();
             allProducts = dataLoaderContext.getDataLoader().getAllProducts();
+            currentFilteredProducts = new ArrayList<>(allProducts);
 
             if (allProducts.isEmpty()) {
                 productDetailsLabel.setText("No products available.");
@@ -63,20 +70,72 @@ public class Home {
             e.printStackTrace();
         }
     }
-    
+
+    @FXML
+    private void loadAllProducts() {
+        loadProductsByType(null);
+    }
+
+    @FXML
+    private void loadComputers() {
+        loadProductsByType("Computers");
+    }
+
+    @FXML
+    private void loadCellphones() {
+        loadProductsByType("Cellphones");
+    }
+
+    @FXML
+    private void loadGroceries() {
+        loadProductsByType("Groceries");
+    }
+
+    @FXML
+    private void loadClothing() {
+        loadProductsByType("Clothing");
+    }
+
+    @FXML
+    private void loadBeauty() {
+        loadProductsByType("Beauty");
+    }
+
+    @FXML
+    private void loadOthers() {
+        loadProductsByType("Others");
+    }
+
+    @FXML
+    private void addItem() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddItem.fxml"));
+            Parent root = loader.load();
+            Stage addItemStage = new Stage();
+            addItemStage.initModality(Modality.APPLICATION_MODAL);
+            addItemStage.initStyle(StageStyle.DECORATED);
+            addItemStage.setTitle("Add New Item");
+            addItemStage.setScene(new Scene(root));
+            addItemStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void loadProductsByType(String productType) {
-        // 清空列表
         productListView.getItems().clear();
 
-        // 遍历产品列表并添加匹配类型的产品
-        for (Product product : allProducts) {
-            if (product.getProductType().equalsIgnoreCase(productType)) {
-                productListView.getItems().add(product);
-            }
+        if (productType == null) {
+            currentFilteredProducts = new ArrayList<>(allProducts);
+        } else {
+            currentFilteredProducts = allProducts.stream()
+                    .filter(product -> product.getProductType().equalsIgnoreCase(productType))
+                    .collect(Collectors.toList());
         }
 
-        // 检查是否有匹配的产品
-        if (productListView.getItems().isEmpty()) {
+        productListView.getItems().addAll(currentFilteredProducts);
+
+        if (currentFilteredProducts.isEmpty()) {
             productDetailsLabel.setText("No products available in this category.");
             productImageView.setImage(null);
         } else {
@@ -96,16 +155,16 @@ public class Home {
     }
 
     private boolean useFileStrategy() {
-        return true; // 
+        return true;
     }
 
     private void showProductDetails(Product product) {
         productDetailsLabel.setText("Title: " + product.getTitle() +
-            "\nDescription: " + product.getDescription() +
-            "\nPrice: $" + product.getPrice() +
-            "\nSeller: " + product.getSeller().getUsername() +
-            "\nStatus: " + product.getStatus() +
-            "\nProductType: " + product.getProductType());
+                "\nDescription: " + product.getDescription() +
+                "\nPrice: $" + product.getPrice() +
+                "\nSeller: " + product.getSeller().getUsername() +
+                "\nStatus: " + product.getStatus() +
+                "\nProductType: " + product.getProductType());
         if (product.getImagePath() != null && !product.getImagePath().isEmpty()) {
             try {
                 String absolutePath = Paths.get(System.getProperty("user.dir"), "src", product.getImagePath()).toString();
@@ -126,10 +185,10 @@ public class Home {
     }
 
     private void onSearch(String query) {
-        List<Product> filteredProducts = allProducts.stream()
-            .filter(product -> product.getTitle().toLowerCase().contains(query.toLowerCase()) ||
-                    product.getDescription().toLowerCase().contains(query.toLowerCase()))
-            .collect(Collectors.toList());
+        List<Product> filteredProducts = currentFilteredProducts.stream()
+                .filter(product -> product.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                        product.getDescription().toLowerCase().contains(query.toLowerCase()))
+                .collect(Collectors.toList());
 
         productListView.getItems().clear();
         productListView.getItems().addAll(filteredProducts);
@@ -143,18 +202,4 @@ public class Home {
         }
     }
 
-    @FXML
-    private void onExit() {
-        Alert exitConfirmation = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?", ButtonType.YES, ButtonType.NO);
-        exitConfirmation.setTitle("Exit Confirmation");
-        exitConfirmation.setHeaderText(null);
-
-        exitConfirmation.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.YES) {
-                Stage stage = (Stage) productListView.getScene().getWindow();
-                stage.close();
-            }
-        });
-    }
-   
 }

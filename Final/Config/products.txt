@@ -3,6 +3,38 @@ productID:2 | title:Lightbulk | description:Some scratches | price:1.00 | seller
 productID:3 | title:Nike | description:Some scratches | price:10.00 | sellerID:2 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Clothing
 productID:4 | title:beauty Pro 2019 | description:Some scratches | price:100.00 | sellerID:2 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Beauty
 productID:5 | title:MacAir 2018 | description:Some scratches | price:1000.00 | sellerID:2 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Computers
-productID:6 | title:a | description:asdfasdf | price:23.00 | sellerID:2 | status:ok | imagePath:AddItem | productType:Beauty
-productID:7 | title:MacBook Pro 2019 | description:Some scratches | price:10000.00 | sellerID:2 | status:sold | imagePath:/goodsImage/item1.jpg| productType:Others
-productID:8 | title:aa | description:asdfasdfasdf | price:23.00 | sellerID:111 | status:dd | imagePath: | productType:Groceries
+productID:6 | title:a | description:asdfasdf | price:23.00 | sellerID:2 | status:ok | imagePath:/goodsImage/item1.jpg | productType:Beauty
+productID:7 | title:MacBook Pro 2019 | description:Some scratches | price:10000.00 | sellerID:2 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:8 | title:aa | description:asdfasdfasdf | price:23.00 | sellerID:111 | status:dd | imagePath:/goodsImage/item1.jpg | productType:Groceries
+productID:9 | title:Samsung Galaxy S20 | description:Good condition | price:450.00 | sellerID:3 | status:available | imagePath:/goodsImage/item1.jpg | productType:Cellphones
+productID:10 | title:Dell XPS 13 | description:Like new | price:1200.00 | sellerID:4 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
+productID:11 | title:Adidas Sneakers | description:Lightly used | price:80.00 | sellerID:5 | status:available | imagePath:/goodsImage/item1.jpg | productType:Clothing
+productID:12 | title:HP Envy Printer | description:Works well | price:150.00 | sellerID:6 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:13 | title:KitchenAid Mixer | description:Some wear | price:200.00 | sellerID:7 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
+productID:14 | title:Sony Headphones | description:Excellent sound quality | price:300.00 | sellerID:8 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:15 | title:Canon EOS 80D Camera | description:Good condition | price:900.00 | sellerID:9 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:16 | title:Xbox One | description:Good condition | price:250.00 | sellerID:10 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:17 | title:Apple Watch Series 5 | description:Lightly used | price:350.00 | sellerID:11 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:18 | title:Samsung Smart TV | description:Good condition | price:500.00 | sellerID:12 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:19 | title:Bose SoundLink Speaker | description:Great sound | price:200.00 | sellerID:13 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:20 | title:Sony PlayStation 4 | description:Used but working | price:180.00 | sellerID:14 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:21 | title:Nintendo Switch | description:Good condition | price:300.00 | sellerID:15 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:22 | title:Google Pixel 4 | description:Lightly used | price:400.00 | sellerID:16 | status:available | imagePath:/goodsImage/item1.jpg | productType:Cellphones
+productID:23 | title:HP Pavilion Laptop | description:Great for work | price:600.00 | sellerID:17 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
+productID:24 | title:Apple AirPods Pro | description:Like new | price:200.00 | sellerID:18 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:25 | title:Logitech Mouse | description:Ergonomic design | price:30.00 | sellerID:19 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:26 | title:Dyson Vacuum | description:Powerful suction | price:400.00 | sellerID:20 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:27 | title:GoPro Hero 8 | description:Waterproof camera | price:350.00 | sellerID:21 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:28 | title:Fossil Men's Watch | description:Classic style | price:120.00 | sellerID:22 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:29 | title:Samsung Chromebook | description:Lightweight laptop | price:250.00 | sellerID:23 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
+productID:30 | title:Beats Studio3 Headphones | description:Excellent bass | price:280.00 | sellerID:24 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:31 | title:Fitbit Charge 4 | description:Track your fitness | price:100.00 | sellerID:25 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:32 | title:Surface Pro 7 | description:Versatile laptop | price:900.00 | sellerID:26 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
+productID:33 | title:Blender | description:Perfect for smoothies | price:60.00 | sellerID:27 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
+productID:34 | title:Dyson Hair Dryer | description:Fast drying | price:250.00 | sellerID:28 | status:available | imagePath:/goodsImage/item1.jpg | productType:Beauty
+productID:35 | title:Instant Pot | description:Multi-use cooker | price:80.00 | sellerID:29 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
+productID:36 | title:Cole Haan Shoes | description:Comfortable walking shoes | price:100.00 | sellerID:30 | status:available | imagePath:/goodsImage/item1.jpg | productType:Clothing
+productID:37 | title:Electric Kettle | description:Boils water quickly | price:25.00 | sellerID:31 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
+productID:38 | title:Nikon D5600 DSLR | description:High resolution | price:700.00 | sellerID:32 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
+productID:39 | title:Apple Mac Mini | description:Compact desktop | price:800.00 | sellerID:33 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
+productID:40 | title:Kenwood Toaster | description:Two-slice toaster | price:30.00 | sellerID:34 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
