@@ -56,6 +56,9 @@ public class Home {
                 }
             });
 
+            // Add listener for search field to filter products as user types
+            searchField.textProperty().addListener((obs, oldText, newText) -> onSearch(newText));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -119,6 +122,24 @@ public class Home {
             }
         } else {
             productImageView.setImage(null);
+        }
+    }
+
+    private void onSearch(String query) {
+        List<Product> filteredProducts = allProducts.stream()
+            .filter(product -> product.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                    product.getDescription().toLowerCase().contains(query.toLowerCase()))
+            .collect(Collectors.toList());
+
+        productListView.getItems().clear();
+        productListView.getItems().addAll(filteredProducts);
+
+        if (filteredProducts.isEmpty()) {
+            productDetailsLabel.setText("No products found.");
+            productImageView.setImage(null);
+        } else {
+            productListView.getSelectionModel().selectFirst();
+            showProductDetails(filteredProducts.get(0));
         }
     }
 
