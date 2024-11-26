@@ -1,6 +1,5 @@
 package application;
 
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -22,6 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class AddItem {
 
@@ -30,8 +30,6 @@ public class AddItem {
     private List<Product> allProducts = new ArrayList<>();
     
     private ProductController productController;
-
-
 
     @FXML
     private TableView<Product> productTableView;
@@ -62,7 +60,7 @@ public class AddItem {
             System.out.println("productTableView 已初始化");
         }
         
-     // 初始化 ProductController
+        // 初始化 ProductController
         ProductService productService = new ProductService();
         productController = new ProductController(productService);
 
@@ -81,10 +79,8 @@ public class AddItem {
 
         // 设置表格数据
         productTableView.setItems(FXCollections.observableArrayList(productController.getAllProducts()));
-
     }
     
-
     @FXML
     public void Add(ActionEvent event) {
         try {
@@ -108,10 +104,11 @@ public class AddItem {
             String status = statusField.getText();
             String productType = comboBox.getValue();
             String sellerID = studentIdField.getText();
+            String imagePath = textField.getText();
 
             Product newProduct = new Product(
                     String.valueOf(productController.getAllProducts().size() + 1),
-                    title, description, String.valueOf(price), sellerID, status, "", productType
+                    title, description, String.valueOf(price), sellerID, status, imagePath, productType
             );
 
             // 添加商品
@@ -164,9 +161,6 @@ public class AddItem {
         }
     }
 
-    
-
-
     @FXML
     private void handleUploadImage() {
         FileChooser fileChooser = new FileChooser();
@@ -180,21 +174,17 @@ public class AddItem {
         if (selectedFile != null) {
             Image image = new Image(selectedFile.toURI().toString());
             imageView.setImage(image);
-            textField.setText(selectedFile.getAbsolutePath());
-            System.out.println("imagepath：" + selectedFile.getAbsolutePath());
+            textField.setText(selectedFile.toURI().toString()); // 使用URI路径以确保相对路径能够正确加载
+            System.out.println("imagepath：" + selectedFile.toURI().toString());
         } else {
             System.out.println("no image！");
         }
     }
-  
 
     @FXML
-
     public String getComboBoxInfo(ActionEvent event)
     {
         System.out.println("hi");
         return comboBox.getValue();
     }
 }
-
-
