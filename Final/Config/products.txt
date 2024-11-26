@@ -38,3 +38,4 @@ productID:37 | title:Electric Kettle | description:Boils water quickly | price:2
 productID:38 | title:Nikon D5600 DSLR | description:High resolution | price:700.00 | sellerID:32 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
 productID:39 | title:Apple Mac Mini | description:Compact desktop | price:800.00 | sellerID:33 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
 productID:40 | title:Kenwood Toaster | description:Two-slice toaster | price:30.00 | sellerID:34 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
+productID:41 | title:test | description:test | price:20.00 | sellerID:1 | status:sold | imagePath: | productType:Beauty

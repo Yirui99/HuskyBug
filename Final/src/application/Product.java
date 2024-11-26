@@ -54,7 +54,6 @@ public class Product {
     }
 
     public String getPriceAsString() {
-        System.out.println("getPriceAsString 被调用");
         return String.format("$%.2f", price);
     }
 

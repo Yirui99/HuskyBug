@@ -19,12 +19,7 @@
          <top>
             <Pane prefHeight="80.0" prefWidth="770.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="14.0" layoutY="12.0" text="Dashboard">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="searchField" layoutX="359.0" layoutY="30.0" promptText="Search for products..." prefWidth="300.0" prefHeight="40.0" />
+                  <TextField fx:id="searchField" layoutX="359.0" layoutY="25.0" promptText="Search for products..." prefWidth="300.0" prefHeight="40.0" />
                </children>
             </Pane>
          </top>
