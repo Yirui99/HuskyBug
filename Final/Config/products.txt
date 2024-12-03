@@ -5,7 +5,7 @@ productID:4 | title:beauty Pro 2019 | description:Some scratches | price:100.00 
 productID:5 | title:MacAir 2018 | description:Some scratches | price:1000.00 | sellerID:2 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Computers
 productID:6 | title:a | description:asdfasdf | price:23.00 | sellerID:2 | status:ok | imagePath:/goodsImage/item1.jpg | productType:Beauty
 productID:7 | title:MacBook Pro 2019 | description:Some scratches | price:10000.00 | sellerID:2 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Others
-productID:8 | title:aa | description:asdfasdfasdf | price:23.00 | sellerID:111 | status:dd | imagePath:/goodsImage/item1.jpg | productType:Groceries
+productID:8 | title:MacBook Pro 2020 | description:asdfasdfasdf | price:23.00 | sellerID:11 | status:dd | imagePath:/goodsImage/item1.jpg | productType:Groceries
 productID:9 | title:Samsung Galaxy S20 | description:Good condition | price:450.00 | sellerID:3 | status:available | imagePath:/goodsImage/item1.jpg | productType:Cellphones
 productID:10 | title:Dell XPS 13 | description:Like new | price:1200.00 | sellerID:4 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
 productID:11 | title:Adidas Sneakers | description:Lightly used | price:80.00 | sellerID:5 | status:available | imagePath:/goodsImage/item1.jpg | productType:Clothing
@@ -38,5 +38,5 @@ productID:37 | title:Electric Kettle | description:Boils water quickly | price:2
 productID:38 | title:Nikon D5600 DSLR | description:High resolution | price:700.00 | sellerID:32 | status:available | imagePath:/goodsImage/item1.jpg | productType:Others
 productID:39 | title:Apple Mac Mini | description:Compact desktop | price:800.00 | sellerID:33 | status:available | imagePath:/goodsImage/item1.jpg | productType:Computers
 productID:40 | title:Kenwood Toaster | description:Two-slice toaster | price:30.00 | sellerID:34 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
-productID:41 | title:test | description:test | price:20.00 | sellerID:1 | status:sold | imagePath: | productType:Beauty
+productID:41 | title:test | description:test | price:20.00 | sellerID:1 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Beauty
 productID:42 | title:test2 | description:test2 | price:20.00 | sellerID:1 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Beauty

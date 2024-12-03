@@ -63,6 +63,16 @@ public class Home {
                 }
             });
 
+            // 添加双击监听器
+            productListView.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2) { // 检测双击
+                    Product selectedProduct = productListView.getSelectionModel().getSelectedItem();
+                    if (selectedProduct != null) {
+                        openProductDetails(selectedProduct);
+                    }
+                }
+            });
+
             // Add listener for search field to filter products as user types
             searchField.textProperty().addListener((obs, oldText, newText) -> onSearch(newText));
 
@@ -70,6 +80,27 @@ public class Home {
             e.printStackTrace();
         }
     }
+
+    private void openProductDetails(Product product) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductDetails.fxml"));
+            Parent root = loader.load();
+
+            // 获取商品详情页面的控制器，并传递数据
+            ProductDetailsController controller = loader.getController();
+            controller.setProduct(product);
+
+            // 创建新窗口
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Product Details");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     private void loadAllProducts() {
@@ -160,11 +191,8 @@ public class Home {
 
     private void showProductDetails(Product product) {
         productDetailsLabel.setText("Title: " + product.getTitle() +
-                "\nDescription: " + product.getDescription() +
                 "\nPrice: $" + product.getPrice() +
-                "\nSeller: " + product.getSeller().getUsername() +
-                "\nStatus: " + product.getStatus() +
-                "\nProductType: " + product.getProductType());
+                "\nStatus: " + product.getStatus());
         if (product.getImagePath() != null && !product.getImagePath().isEmpty()) {
             try {
                 String absolutePath = Paths.get(System.getProperty("user.dir"), "src", product.getImagePath()).toString();
