@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="199.0" fitWidth="251.0" layoutX="18.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../goodsImage/item1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="buyButton" layoutX="63.0" layoutY="348.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="72.0" text="Buy">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" layoutX="248.0" layoutY="348.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="72.0" text="Cancel">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Text layoutX="36.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="79.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="37.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" wrappingWidth="72.21630859375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="37.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock:" wrappingWidth="72.21630859375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seller:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField layoutX="87.0" layoutY="37.0" />
+            <TextField layoutX="118.0" layoutY="87.0" prefHeight="125.0" prefWidth="227.0" />
+            <TextField layoutX="87.0" layoutY="223.0" />
+            <TextField layoutX="87.0" layoutY="262.0" />
+            <TextField layoutX="87.0" layoutY="299.0" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
