@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,19 +20,43 @@ public class Login implements LoginInterface {
     private TextField username;
     @FXML
     private PasswordField password;
-
+    @FXML
+    private Button registerButton;
     @Override
     public void USERLogIn(ActionEvent event) throws IOException {
         checkLogin();
     }
-
     private void checkLogin() throws IOException {
         //TO DO
+    	System.out.println("Begin Check the login");
+    	FileDataLoader fileLoader = new FileDataLoader();
+    	fileLoader.loadUsers("");
+    	Map<String,User> infoCheckList =  fileLoader.getUsernameUser();
+    	String inputUsername = username.getText();
+    	String inputPassword = password.getText();
+    	if (infoCheckList.containsKey(inputUsername)) {
+    		if (infoCheckList.get(inputUsername).getPassword().equals(inputPassword)) {
+    			 wrongLogin.setText("Success");
+    	         SceneManager.getInstance().changeScene("Home.fxml");
+    		} else {
+    			wrongLogin.setText("Wrong Password");
+    		}
+    	} else {
+    		wrongLogin.setText("No such user");
+    	}
+    	/*
         if ("".equals(username.getText()) && "".equals(password.getText())) {
             wrongLogin.setText("Success");
             SceneManager.getInstance().changeScene("Home.fxml");
         } else {
             wrongLogin.setText("Failed");
         }
+        */
+    }
+    @FXML
+    public void registerUser(ActionEvent event) throws IOException {
+        System.out.println("Register button clicked!");
+        // 跳转到注册界面（假设为 Register.fxml）
+        SceneManager.getInstance().changeScene("Register.fxml");
     }
 }

@@ -11,4 +11,5 @@ public interface DataLoader {
     List<Product> getAllProducts();
     List<Product> searchProducts(String query);
     public List<Product> getPrioProducts();
+    Map<String, User> getUsernameUser();
 }

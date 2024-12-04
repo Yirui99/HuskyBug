@@ -38,3 +38,6 @@ userID:37 | username:brianroberts | password:mydogname | email:brianroberts@nort
 userID:38 | username:brendamoore | password:something | email:brendamoore@northeastern.edu | phone:8877665544
 userID:39 | username:ericgreen | password:spiderman | email:ericgreen@northeastern.edu | phone:3344228899
 userID:40 | username:angelahernandez | password:matrix789 | email:angelahernandez@northeastern.edu | phone:9900887766
+userID:41 | username:adfdasfdsfds | password:123456 | email:sadfdsfds@northeastern.edu | phone:1234567890
+userID:42 | username:sadsafdasf | password:1234567 | email:asfdsagvdfgw2q@northeastern.edu | phone:1234567890
+userID:43 | username:aewrewrerfcvsaewrewrerfcvs | password:123456 | email:safdswfsfll@northeastern.edu | phone:1111111111

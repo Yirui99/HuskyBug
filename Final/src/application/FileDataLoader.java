@@ -10,7 +10,7 @@ public class FileDataLoader implements DataLoader {
 
     private Map<Integer, User> users = new HashMap<>();
     private List<Product> products = new ArrayList<>();
-    
+    private Map<String,User> usenameUserMap = new HashMap<>();
     private final String userFilePath = System.getProperty("user.dir") + "/Config/users.txt";
     private final String productFilePath = System.getProperty("user.dir") + "/Config/products.txt";
 
@@ -68,8 +68,9 @@ public class FileDataLoader implements DataLoader {
             String password = parseField(parts[2], "password");
             String email = parseField(parts[3], "email");
             String phone = parseField(parts[4], "phone");
-
-            users.put(userID, new User(userID, username, password, email, phone));
+            User currentUser = new User(userID, username, password, email, phone);
+            users.put(userID, currentUser );
+            usenameUserMap.put(username, currentUser);
         } catch (Exception e) {
             System.err.println("Error parsing user line: " + line);
         }
@@ -142,7 +143,10 @@ public class FileDataLoader implements DataLoader {
         }
         return result;
     }
-
+    @Override
+    public Map<String,User> getUsernameUser(){
+    	return usenameUserMap;
+    }
     private boolean isQueryInProduct(String query, Product product) {
         String lowerCaseQuery = query.toLowerCase();
         return containsIgnoreCase(product.getTitle(), lowerCaseQuery) ||
@@ -154,6 +158,13 @@ public class FileDataLoader implements DataLoader {
             return source.toLowerCase().contains(target);
         }
         return false;
+    }
+    public void writeToFile(String line) throws IOException {
+        File file = new File(userFilePath);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
+            writer.write(line);
+            writer.newLine(); // 换行
+        }
     }
 
 

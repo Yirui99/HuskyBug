@@ -44,7 +44,13 @@
             <Button fx:id="button" layoutX="183.0" layoutY="364.0" mnemonicParsing="false" onAction="#USERLogIn" prefHeight="26.0" prefWidth="96.0" text="Login" textFill="#e81818">
                <font>
                   <Font name="System Bold" size="19.0" />
-               </font></Button>
+               </font>
+            </Button>
+            <Button fx:id="registerButton" layoutX="183.0" layoutY="410.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="26.0" prefWidth="96.0" text="Register" textFill="#18e86b">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Button>
             <Label fx:id="wrongLogin" layoutX="183.0" layoutY="159.0" prefHeight="29.0" prefWidth="144.0" textFill="#bc1111">
                <font>
                   <Font size="20.0" />
