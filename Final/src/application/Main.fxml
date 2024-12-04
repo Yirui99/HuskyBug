@@ -16,7 +16,7 @@
          <children>
             <AnchorPane layoutX="6.0" layoutY="1.0" prefHeight="542.0" prefWidth="528.0">
                <children>
-                  <ImageView fitHeight="645.0" fitWidth="521.0" layoutX="7.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ImageView fitHeight="629.0" fitWidth="521.0" layoutX="7.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@wechat_2024-11-23_141453_043.png" />
                      </image>
@@ -41,24 +41,24 @@
             </Label>
             <TextField fx:id="username" layoutX="183.0" layoutY="212.0" promptText="Username" />
             <PasswordField fx:id="password" layoutX="183.0" layoutY="266.0" promptText="Password" />
-            <Button fx:id="button" layoutX="183.0" layoutY="364.0" mnemonicParsing="false" onAction="#USERLogIn" prefHeight="26.0" prefWidth="96.0" text="Login" textFill="#e81818">
+            <Button fx:id="button" layoutX="63.0" layoutY="364.0" mnemonicParsing="false" onAction="#USERLogIn" prefHeight="26.0" prefWidth="96.0" text="Login">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Button>
-            <Button fx:id="registerButton" layoutX="183.0" layoutY="410.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="26.0" prefWidth="96.0" text="Register" textFill="#18e86b">
+            <Button fx:id="registerButton" layoutX="225.0" layoutY="364.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="26.0" prefWidth="96.0" text="Register">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Button>
-            <Label fx:id="wrongLogin" layoutX="183.0" layoutY="159.0" prefHeight="29.0" prefWidth="144.0" textFill="#bc1111">
+            <Label fx:id="wrongLogin" layoutX="111.0" layoutY="317.0" prefHeight="29.0" prefWidth="144.0" textFill="#bc1111">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="85.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="111.74324035644531" AnchorPane.topAnchor="24.0">
+            <ImageView fitHeight="116.0" fitWidth="220.0" layoutX="73.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0" AnchorPane.topAnchor="71.0">
                <image>
-                  <Image url="@Untitled.png" />
+                  <Image url="@../goodsImage/logo.png" />
                </image>
             </ImageView>
          </children>

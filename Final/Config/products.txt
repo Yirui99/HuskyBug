@@ -40,4 +40,3 @@ productID:39 | title:Apple Mac Mini | description:Compact desktop | price:800.00
 productID:40 | title:Kenwood Toaster | description:Two-slice toaster | price:30.00 | sellerID:34 | status:available | imagePath:/goodsImage/item1.jpg | productType:Groceries
 productID:41 | title:test | description:test | price:20.00 | sellerID:1 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Beauty
 productID:42 | title:test2 | description:test2 | price:20.00 | sellerID:1 | status:sold | imagePath:/goodsImage/item1.jpg | productType:Beauty
-productID:43 | title:test3 | description:23456789gbfvcdx | price:4567.00 | sellerID:777 | status:available | imagePath: | productType:Groceries
