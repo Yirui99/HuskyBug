@@ -22,6 +22,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import java.util.function.Consumer;
+
 
 public class AddItem {
 
@@ -51,6 +53,13 @@ public class AddItem {
     
     @FXML
     private TextField textField;
+    
+    private Consumer<Product> onProductAdded;
+
+    public void setOnProductAdded(Consumer<Product> onProductAdded) {
+        this.onProductAdded = onProductAdded;
+    }
+
 
     @FXML
     public void initialize() {       
@@ -84,8 +93,8 @@ public class AddItem {
     @FXML
     public void Add(ActionEvent event) {
         try {
-            // 输入校验
-            if (titleField.getText().isEmpty() || descriptionField.getText().isEmpty() || priceField.getText().isEmpty() || comboBox.getValue() == null) {
+            if (titleField.getText().isEmpty() || descriptionField.getText().isEmpty() || 
+                priceField.getText().isEmpty() || comboBox.getValue() == null) {
                 System.out.println("fill all field！");
                 return;
             }
@@ -98,7 +107,6 @@ public class AddItem {
                 return;
             }
 
-            // 获取输入值
             String title = titleField.getText();
             String description = descriptionField.getText();
             String status = statusField.getText();
@@ -111,16 +119,24 @@ public class AddItem {
                     title, description, String.valueOf(price), sellerID, status, imagePath, productType
             );
 
-            // 添加商品
             productController.addProduct(newProduct);
 
             // 更新表格
             productTableView.setItems(FXCollections.observableArrayList(productController.getAllProducts()));
             System.out.println("商品添加成功！");
+
+            // 回调传递新商品给 Home 页面
+            if (onProductAdded != null) {
+                onProductAdded.accept(newProduct);
+            }
+
+            // 关闭窗口
+            ((Stage) productTableView.getScene().getWindow()).close();
         } catch (Exception e) {
             System.err.println("添加商品时出错：" + e.getMessage());
         }
     }
+
 
     private Product getSelectedProduct() {
         Product selectedProduct = productTableView.getSelectionModel().getSelectedItem();

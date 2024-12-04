@@ -142,6 +142,17 @@ public class Home {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AddItem.fxml"));
             Parent root = loader.load();
+
+            // 获取 AddItem 的控制器
+            AddItem addItemController = loader.getController();
+
+            // 设置回调函数
+            addItemController.setOnProductAdded(product -> {
+                allProducts.add(product); // 将新商品添加到列表
+                loadAllProducts();       // 刷新列表
+            });
+
+            // 显示添加商品的窗口
             Stage addItemStage = new Stage();
             addItemStage.initModality(Modality.APPLICATION_MODAL);
             addItemStage.initStyle(StageStyle.DECORATED);
@@ -152,6 +163,7 @@ public class Home {
             e.printStackTrace();
         }
     }
+
 
     public void loadProductsByType(String productType) {
         productListView.getItems().clear();
