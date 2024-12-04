@@ -41,3 +41,6 @@ userID:40 | username:angelahernandez | password:matrix789 | email:angelahernande
 userID:41 | username:adfdasfdsfds | password:123456 | email:sadfdsfds@northeastern.edu | phone:1234567890
 userID:42 | username:sadsafdasf | password:1234567 | email:asfdsagvdfgw2q@northeastern.edu | phone:1234567890
 userID:43 | username:aewrewrerfcvsaewrewrerfcvs | password:123456 | email:safdswfsfll@northeastern.edu | phone:1111111111
+userID:44 | username:002374194 | password:123 | email:Jazzyzhangjy@outlook.com | phone:7813330698
+userID:45 | username:zzzjjj | password:yyy | email:yyy@outlook.com | phone:7813330698
+userID:46 | username:777 | password:777 | email:777@gmail.com | phone:777

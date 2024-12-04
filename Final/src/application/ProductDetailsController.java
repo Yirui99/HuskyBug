@@ -1,25 +1,16 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.StageStyle;
-import javafx.scene.control.Button;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import javafx.scene.Parent;
 
 public class ProductDetailsController {
 
@@ -84,6 +75,11 @@ public class ProductDetailsController {
         priceField.setText(String.valueOf(product.getPrice()));
         stockField.setText(product.getStatus());
         sellerField.setText(product.getSeller().getUsername());
+        nameField.setEditable(false);
+        descriptionField.setEditable(false);
+        priceField.setEditable(false);
+        stockField.setEditable(false);
+        sellerField.setEditable(false);
 
         if (product.getImagePath() != null && !product.getImagePath().isEmpty()) {
             productImageView.setImage(new Image(product.getImagePath()));
