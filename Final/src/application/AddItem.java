@@ -111,12 +111,12 @@ public class AddItem {
             String description = descriptionField.getText();
             String status = statusField.getText();
             String productType = comboBox.getValue();
-            String sellerID = studentIdField.getText();
+            //String sellerID = studentIdField.getText();
             String imagePath = textField.getText();
 
             Product newProduct = new Product(
                     String.valueOf(productController.getAllProducts().size() + 1),
-                    title, description, String.valueOf(price), sellerID, status, imagePath, productType
+                    title, description, String.valueOf(price), "43", status, imagePath, productType
             );
 
             productController.addProduct(newProduct);
