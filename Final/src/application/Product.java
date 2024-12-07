@@ -5,7 +5,7 @@ public class Product {
     private String title;
     private String description;
     private double price;
-    private User seller; // 修改为 User 类型
+    private User seller;
     private String status;
     private String imagePath;
 	private String productType;
@@ -57,7 +57,7 @@ public class Product {
         return String.format("$%.2f", price);
     }
 
-    public User getSeller() { // 返回 User 对象
+    public User getSeller() {
         return seller;
     }
 

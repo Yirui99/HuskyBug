@@ -63,9 +63,8 @@ public class Home {
                 }
             });
 
-            // 添加双击监听器
             productListView.setOnMouseClicked(event -> {
-                if (event.getClickCount() == 2) { // 检测双击
+                if (event.getClickCount() == 2) { 
                     Product selectedProduct = productListView.getSelectionModel().getSelectedItem();
                     if (selectedProduct != null) {
                         openProductDetails(selectedProduct);
@@ -73,7 +72,6 @@ public class Home {
                 }
             });
 
-            // Add listener for search field to filter products as user types
             searchField.textProperty().addListener((obs, oldText, newText) -> onSearch(newText));
 
         } catch (IOException e) {
@@ -85,12 +83,8 @@ public class Home {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductDetails.fxml"));
             Parent root = loader.load();
-
-            // 获取商品详情页面的控制器，并传递数据
             ProductDetailsController controller = loader.getController();
             controller.setProduct(product);
-
-            // 创建新窗口
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Product Details");
@@ -142,17 +136,13 @@ public class Home {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AddItem.fxml"));
             Parent root = loader.load();
-
-            // 获取 AddItem 的控制器
             AddItem addItemController = loader.getController();
 
-            // 设置回调函数
             addItemController.setOnProductAdded(product -> {
-                allProducts.add(product); // 将新商品添加到列表
-                loadAllProducts();       // 刷新列表
+                allProducts.add(product); 
+                loadAllProducts();       
             });
 
-            // 显示添加商品的窗口
             Stage addItemStage = new Stage();
             addItemStage.initModality(Modality.APPLICATION_MODAL);
             addItemStage.initStyle(StageStyle.DECORATED);
@@ -188,10 +178,7 @@ public class Home {
     }
 
     private void loadData() throws IOException {
-        // 指定目录路径
         String basePath = System.getProperty("user.dir") + "/src/application";
-
-        // 加载数据
         dataLoaderContext.setDataLoader(new FileDataLoader());
         dataLoaderContext.getDataLoader().loadUsers(basePath);
         dataLoaderContext.getDataLoader().loadProducts(basePath);

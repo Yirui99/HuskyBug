@@ -5,8 +5,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class FileDataLoader implements DataLoader {
-    private static final int USER_FIELDS_COUNT = 5;       // 用户字段数量
-    private static final int PRODUCT_FIELDS_COUNT = 8;    // 产品字段数量
+    private static final int USER_FIELDS_COUNT = 5;      
+    private static final int PRODUCT_FIELDS_COUNT = 8;    
 
     private Map<Integer, User> users = new HashMap<>();
     private List<Product> products = new ArrayList<>();
@@ -36,7 +36,6 @@ public class FileDataLoader implements DataLoader {
     }
 
 
-    // Unified file reading method
     private List<String> readFileLines(String path) throws IOException {
         File file = new File(path);
         if (!file.exists()) {
@@ -55,7 +54,6 @@ public class FileDataLoader implements DataLoader {
     }
 
 
-    // Parsing individual user line
     private void parseUserLine(String line) {
         String[] parts = line.split(" \\| ");
         if (parts.length < USER_FIELDS_COUNT) {
@@ -76,7 +74,6 @@ public class FileDataLoader implements DataLoader {
         }
     }
 
-    // Parsing individual product line
     private void parseProductLine(String line) {
         String[] parts = line.split(" \\| ");
         if (parts.length < PRODUCT_FIELDS_COUNT) {
@@ -104,7 +101,6 @@ public class FileDataLoader implements DataLoader {
         }
     }
 
-    // Field parsing helper method
     private String parseField(String part, String fieldName) {
         String[] keyValue = part.split(":");
         if (keyValue.length < 2 || keyValue[1].trim().isEmpty()) {
@@ -113,7 +109,6 @@ public class FileDataLoader implements DataLoader {
         return keyValue[1].trim();
     }
 
-    // Integer field parsing helper method
     private int parseIntField(String part, String fieldName) {
         return Integer.parseInt(parseField(part, fieldName));
     }
@@ -130,7 +125,6 @@ public class FileDataLoader implements DataLoader {
 
     @Override
     public List<Product> getPrioProducts() {
-        // TODO Auto-generated method stub
         return null;
     }
     @Override
@@ -163,7 +157,7 @@ public class FileDataLoader implements DataLoader {
         File file = new File(userFilePath);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(line);
-            writer.newLine(); // 换行
+            writer.newLine(); 
         }
     }
 

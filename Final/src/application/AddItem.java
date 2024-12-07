@@ -69,14 +69,11 @@ public class AddItem {
             System.out.println("productTableView 已初始化");
         }
         
-        // 初始化 ProductController
         ProductService productService = new ProductService();
         productController = new ProductController(productService);
 
-        // 加载商品数据
         productController.loadProducts();
 
-        // 初始化表格和下拉框
         comboBox.setItems(FXCollections.observableArrayList("Groceries", "Clothing", "Beauty", "Computers", "Cellphones", "Others"));
         productIDColumn.setCellValueFactory(new PropertyValueFactory<>("productID"));
         sellerIDColumn.setCellValueFactory(new PropertyValueFactory<>("sellerIDAsString"));
@@ -86,7 +83,6 @@ public class AddItem {
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         productTypeColumn.setCellValueFactory(new PropertyValueFactory<>("productType"));
 
-        // 设置表格数据
         productTableView.setItems(FXCollections.observableArrayList(productController.getAllProducts()));
     }
     
@@ -111,7 +107,6 @@ public class AddItem {
             String description = descriptionField.getText();
             String status = statusField.getText();
             String productType = comboBox.getValue();
-            //String sellerID = studentIdField.getText();
             String imagePath = textField.getText();
 
             Product newProduct = new Product(
@@ -120,17 +115,13 @@ public class AddItem {
             );
 
             productController.addProduct(newProduct);
-
-            // 更新表格
             productTableView.setItems(FXCollections.observableArrayList(productController.getAllProducts()));
             System.out.println("商品添加成功！");
 
-            // 回调传递新商品给 Home 页面
             if (onProductAdded != null) {
                 onProductAdded.accept(newProduct);
             }
 
-            // 关闭窗口
             ((Stage) productTableView.getScene().getWindow()).close();
         } catch (Exception e) {
             System.err.println("添加商品时出错：" + e.getMessage());
@@ -190,7 +181,7 @@ public class AddItem {
         if (selectedFile != null) {
             Image image = new Image(selectedFile.toURI().toString());
             imageView.setImage(image);
-            textField.setText(selectedFile.toURI().toString()); // 使用URI路径以确保相对路径能够正确加载
+            textField.setText(selectedFile.toURI().toString()); 
             System.out.println("imagepath：" + selectedFile.toURI().toString());
         } else {
             System.out.println("no image！");

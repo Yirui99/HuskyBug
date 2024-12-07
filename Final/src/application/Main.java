@@ -17,8 +17,6 @@ public class Main extends Application {
 
             SceneManager.getInstance().setStage(primaryStage);
 
-            //Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-
             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
             root.setOnMousePressed(event -> {
                 x = event.getSceneX();

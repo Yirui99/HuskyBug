@@ -54,7 +54,6 @@ public class ProductService {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             for (Product product : allProducts) {
-                // 格式化每个字段为 key:value 的形式
                 String formattedProduct = String.format(
                     "productID:%s | title:%s | description:%s | price:%.2f | sellerID:%s | status:%s | imagePath:%s | productType:%s",
                     product.getProductID(),
@@ -73,22 +72,18 @@ public class ProductService {
         }
     }
 
-    // 添加商品
     public void addProduct(Product product) {
         allProducts.add(product);
     }
 
-    // 删除商品
     public void deleteProduct(Product product) {
         allProducts.remove(product);
     }
 
-    // 获取所有商品
     public List<Product> getAllProducts() {
-        return new ArrayList<>(allProducts); // 返回副本以防止外部修改
+        return new ArrayList<>(allProducts); 
     }
 
-    // 通用过滤方法
     public List<Product> filterProducts(Predicate<Product> condition) {
         return allProducts.stream()
                 .filter(condition)

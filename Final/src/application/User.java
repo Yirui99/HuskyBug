@@ -3,7 +3,7 @@ package application;
 public class User {
     private int userID;
     private String username;
-    private String password; // 新增字段
+    private String password; 
     private String email;
     private String phone;
 
@@ -23,7 +23,7 @@ public class User {
         return username;
     }
 
-    public String getPassword() { // 新增 getter 方法
+    public String getPassword() { 
         return password;
     }
 
@@ -35,5 +35,4 @@ public class User {
         return phone;
     }
 
-    // 可选：添加 setter 方法（如果需要修改字段）
 }

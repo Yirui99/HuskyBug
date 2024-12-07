@@ -27,7 +27,6 @@ public class Login implements LoginInterface {
         checkLogin();
     }
     private void checkLogin() throws IOException {
-        //TO DO
     	System.out.println("Begin Check the login");
     	FileDataLoader fileLoader = new FileDataLoader();
     	fileLoader.loadUsers("");
@@ -56,7 +55,6 @@ public class Login implements LoginInterface {
     @FXML
     public void registerUser(ActionEvent event) throws IOException {
         System.out.println("Register button clicked!");
-        // 跳转到注册界面（假设为 Register.fxml）
         SceneManager.getInstance().changeScene("Register.fxml");
     }
 }

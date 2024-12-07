@@ -47,7 +47,6 @@ public class RegisterController {
                 System.out.println("Email: " + email);
                 System.out.println("Phone: " + phone);
 
-                // 跳转到其他界面
                 try {
                     SceneManager.getInstance().changeScene("Home.fxml");
                 } catch (Exception e) {

@@ -38,20 +38,15 @@ public class ProductDetailsController {
     @FXML
     private Button buyButton;
 
-    private Product product; // 当前商品对象
+    private Product product;
 
     @FXML
     private void handleBuyAction() {
         try {
-            // 加载 Payment.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment.fxml"));
             Parent root = loader.load();
-
-            // 获取 PaymentController 并传递商品数据
             PaymentController controller = loader.getController();
             controller.setProduct(product);
-
-            // 创建新的场景并显示
             Stage stage = (Stage) buyButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("Payment");
@@ -63,13 +58,12 @@ public class ProductDetailsController {
 
     @FXML
     private void handleCancelAction() {
-        // 获取当前窗口并关闭
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
     public void setProduct(Product product) {
-        this.product = product; // 传递商品对象
+        this.product = product; 
         nameField.setText(product.getTitle());
         descriptionField.setText(product.getDescription());
         priceField.setText(String.valueOf(product.getPrice()));
